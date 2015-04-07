@@ -6,11 +6,14 @@
 Install Ruby with rbenv.
 
 #### Attributes
-- version - installed Ruby version (required) (e.g. `"2.2.0"`)
-- rbenv_executable_path - path to rbenv executable (e.g. `"/usr/local/bin/rbenv"`)
+- version - Installed Ruby version (required) (e.g. `"2.2.0"`)
+- rbenv_executable_path - Path to rbenv executable (e.g. `"/usr/local/bin/rbenv"`)
+- global - Pass true to make it global (default: `false`)
 
 #### Example
 ```yml
-- type: rbenv_ruby
+- id: install_ruby
+  type: rbenv_ruby
   version: 2.2.0
+  global: true
 ```
