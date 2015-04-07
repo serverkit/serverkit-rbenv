@@ -12,8 +12,9 @@ Install Ruby with rbenv.
 
 #### Example
 ```yml
-- id: install_ruby
-  type: rbenv_ruby
-  version: 2.2.0
-  global: true
+resources:
+  - id: install_ruby
+    type: rbenv_ruby
+    version: 2.2.0
+    global: true
 ```
