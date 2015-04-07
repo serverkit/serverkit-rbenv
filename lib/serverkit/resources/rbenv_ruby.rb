@@ -12,12 +12,8 @@ module Serverkit
       # @note Override
       def apply
         if has_rbenv?
-          unless has_specified_ruby_version?
-            run_command("#{rbenv_executable_path} install #{version}")
-          end
-          if has_invalid_global_version?
-            run_command("#{rbenv_executable_path} global #{version}")
-          end
+          install_specified_ruby_version unless has_specified_ruby_version?
+          set_specified_global_version if has_invalid_global_version?
         end
       end
 
@@ -47,6 +43,14 @@ module Serverkit
       # @return [true, false] True if the specified version of Ruby is installed
       def has_specified_ruby_version?
         check_command("#{rbenv_executable_path} prefix #{version}")
+      end
+
+      def install_specified_ruby_version
+        run_command("#{rbenv_executable_path} install #{version}")
+      end
+
+      def set_specified_global_version
+        run_command("#{rbenv_executable_path} global #{version}")
       end
     end
   end
