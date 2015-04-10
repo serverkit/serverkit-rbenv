@@ -3,12 +3,12 @@
 
 ## Resource
 ### rbenv_ruby
-Install Ruby with rbenv.
+Install specified version of Ruby with rbenv.
 
 #### Attributes
 - version - Installed Ruby version (required) (e.g. `"2.2.0"`)
 - global - Pass true to make it global (default: `false`)
-- rbenv_executable_path - Path to rbenv executable (e.g. `"/usr/local/bin/rbenv"`)
+- rbenv_executable_path - Path to rbenv executable (default: `"rbenv"`)
 
 #### Example
 ```yml
