@@ -26,6 +26,11 @@ module Serverkit
 
       private
 
+      # @note Override
+      def default_id
+        version
+      end
+
       def global_version
         run_command("#{rbenv_executable_path} global").stdout.rstrip
       end
