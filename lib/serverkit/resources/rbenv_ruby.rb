@@ -1,3 +1,5 @@
+require "serverkit/resources/base"
+
 module Serverkit
   module Resources
     class RbenvRuby < Base
