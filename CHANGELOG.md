@@ -1,3 +1,6 @@
+## 0.2.0
+- Add dependencies attribute for easy installation
+
 ## 0.1.1
 - Fix inefficient apply
 
