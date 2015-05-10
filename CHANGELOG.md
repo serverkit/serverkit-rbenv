@@ -1,3 +1,6 @@
+## 0.1.1
+- Fix inefficient apply
+
 ## 0.1.0
 - Add rbenv_dependent_packages resource
 
