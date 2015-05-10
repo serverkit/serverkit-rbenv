@@ -58,7 +58,7 @@ resources:
     user: foo
 ```
 
-### rbenv_ruby
+### rbenv_ruby_build
 Install ruby-build into home directory.
 
 #### Attributes
