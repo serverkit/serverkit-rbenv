@@ -30,6 +30,10 @@ resources:
   - type: rbenv_ruby
     version: 2.2.0
     global: true
+    rbenv_executable_path: /home/foo/.rbenv/bin/rbenv
+    user: foo
+    dependencies: true
+    profile_path: /home/foo/.bash_profile
 ```
 
 ### rbenv_dependent_packages
