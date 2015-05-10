@@ -28,3 +28,12 @@ resources:
     version: 2.2.0
     global: true
 ```
+
+### rbenv_dependent_packages
+Install denpendent packages to install rbenv.
+
+#### Example
+```yml
+resources:
+  - type: rbenv_dependent_packages
+```
