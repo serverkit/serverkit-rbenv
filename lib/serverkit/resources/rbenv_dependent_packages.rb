@@ -52,7 +52,7 @@ module Serverkit
 
       # @note Override
       def apply
-        packages.each(&:apply)
+        packages.each(&:run_apply)
       end
 
       # @note Override
