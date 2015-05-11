@@ -1,3 +1,6 @@
+## 0.3.1
+- Fix wrong dependencies
+
 ## 0.3.0
 - Provide more easy default values for some attributes
 
