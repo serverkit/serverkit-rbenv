@@ -19,7 +19,7 @@ Make sure the specified version of Ruby is installed with rbenv.
 #### Attributes
 - version - Installed Ruby version (required) (e.g. `"2.2.0"`)
 - global - Pass true to make it global (default: `false`)
-- rbenv_executable_path - Path to rbenv executable (default: `"rbenv"`)
+- rbenv_executable_path - Path to rbenv executable (default: $HOME/.rbenv/bin/rbenv or rbenv)
 - user - user name (required if dependencies is true)
 - dependencies - Pass true to install rbenv, ruby-build, their dependencies, profile script
 - profile_path - Where to append init script for rbenv (required if dependencies is true)
@@ -43,6 +43,20 @@ Install denpendent packages to install rbenv.
 ```yml
 resources:
   - type: rbenv_dependent_packages
+```
+
+### rbenv_profile
+Append rbenv init lines into profile file.
+
+#### Attributes
+- profile_path - path to profile file (default: .bash_profile path if user specified)
+- user - user name (required)
+
+#### Example
+```yml
+resources:
+  - type: rbenv_profile
+    user: foo
 ```
 
 ### rbenv_rbenv

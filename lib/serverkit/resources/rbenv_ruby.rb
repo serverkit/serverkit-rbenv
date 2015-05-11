@@ -9,7 +9,7 @@ module Serverkit
       attribute :dependencies, type: [TrueClass, FalseClass]
       attribute :global, default: DEFAULT_GLOBAL, type: [FalseClass, TrueClass]
       attribute :profile_path, type: String
-      attribute :rbenv_executable_path, default: DEFAULT_RBENV_EXECUTABLE_PATH, type: String
+      attribute :rbenv_executable_path, type: String
       attribute :version, required: true, type: String
 
       # Install the specified version of Ruby with rbenv if rbenv is executable
@@ -51,8 +51,13 @@ module Serverkit
         version
       end
 
+      # @return [String]
+      def get_user_home_directory
+        run_command_from_identifier(:get_user_home_directory, user).stdout.rstrip
+      end
+
       def global_version
-        run_command("#{rbenv_executable_path} global").stdout.rstrip
+        run_command("#{proper_rbenv_executable_path} global").stdout.rstrip
       end
 
       def has_correct_dependencies?
@@ -66,12 +71,12 @@ module Serverkit
 
       # @return [true, false] True if rbenv command is executable
       def has_rbenv?
-        check_command("which #{rbenv_executable_path}")
+        check_command("which #{proper_rbenv_executable_path}")
       end
 
       # @return [true, false] True if the specified version of Ruby is installed
       def has_specified_ruby_version?
-        check_command("#{rbenv_executable_path} prefix #{version}")
+        check_command("#{proper_rbenv_executable_path} prefix #{version}")
       end
 
       def install_dependencies
@@ -79,11 +84,23 @@ module Serverkit
       end
 
       def install_specified_ruby_version
-        run_command("#{rbenv_executable_path} install #{version}")
+        run_command("#{proper_rbenv_executable_path} install #{version}")
+      end
+
+      # @return [String]
+      def proper_rbenv_executable_path
+        case
+        when rbenv_executable_path
+          rbenv_executable_path
+        when user
+          "#{get_user_home_directory}/.rbenv/bin/rbenv"
+        else
+          DEFAULT_RBENV_EXECUTABLE_PATH
+        end
       end
 
       def set_specified_global_version
-        run_command("#{rbenv_executable_path} global #{version}")
+        run_command("#{proper_rbenv_executable_path} global #{version}")
       end
     end
   end
