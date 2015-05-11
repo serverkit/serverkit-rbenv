@@ -1,3 +1,6 @@
+## 0.3.0
+- Provide more easy default values for some attributes
+
 ## 0.2.0
 - Add dependencies attribute for easy installation
 
