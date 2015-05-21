@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ryo Nakamura"]
   spec.email         = ["r7kamura@gmail.com"]
   spec.summary       = "Serverkit plug-in for rbenv"
-  spec.homepage      = "https://github.com/r7kamura/serverkit-rbenv"
+  spec.homepage      = "https://github.com/serverkit/serverkit-rbenv"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

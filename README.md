@@ -1,5 +1,5 @@
 # serverkit-rbenv
-[Serverkit](https://github.com/r7kamura/serverkit) plug-in for [rbenv](https://github.com/sstephenson/rbenv).
+[Serverkit](https://github.com/serverkit/serverkit) plug-in for [rbenv](https://github.com/sstephenson/rbenv).
 
 - [Install](#install)
 - [Resource](#resource)
