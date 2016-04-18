@@ -1,3 +1,6 @@
+## 0.3.2
+- Fix Git dependencies for pacman
+
 ## 0.3.1
 - Fix wrong dependencies
 
