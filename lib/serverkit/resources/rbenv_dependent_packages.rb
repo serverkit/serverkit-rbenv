@@ -20,6 +20,7 @@ module Serverkit
 
       PACKAGE_NAMES_FOR_PACMAN = %w[
         base-devel
+        git
         libffi
         libyaml
         openssl
