@@ -22,6 +22,7 @@ module Serverkit
           @recipe,
           "path" => "/home/#{user}/.rbenv",
           "repository" => "https://github.com/sstephenson/rbenv.git",
+          "state" => "updated",
           "user" => user,
         )
         resource.backend = backend

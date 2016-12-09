@@ -22,6 +22,7 @@ module Serverkit
           @recipe,
           "path" => "/home/#{user}/.rbenv/plugins/ruby-build",
           "repository" => "https://github.com/sstephenson/ruby-build.git",
+          "state" => "updated",
           "user" => user,
         )
         resource.backend = backend
